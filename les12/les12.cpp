@@ -64,8 +64,35 @@ struct Person
     }
 };
 
+struct ITSTEP
+{
+    int count_of_students;
+    int count_of_locations;
+    int count_of_kurses;
+    int count_location_countries;
+
+    ITSTEP(int _count_of_students, int _count_of_locations, int _count_of_kurses, int _count_location_countries) {
+        count_of_students = _count_of_students;
+        count_location_countries = _count_location_countries;
+        count_of_kurses = _count_of_kurses;
+        count_of_locations = _count_of_locations;
+    }
+
+    void show() {
+        cout << "count_of_students: " << count_of_students << "count_location_countries" << count_location_countries
+            << "count_of_kurses" << count_of_kurses << "count_of_locations" << count_of_locations << endl;
+    }
+
+    void random() {
+        int rand_rpz = rand() % count_of_students + 1;
+        int rand_dyzain = rand() % count_of_students - rand_rpz;
+        cout << rand_rpz << rand_dyzain;
+    }
+};
+
 int main()
 {
+    srand(time(0));
     Student student1("Maksym", 18, 2, 82, 12);
     student1.show();
 
